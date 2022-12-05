@@ -6,13 +6,13 @@ import { ProjectContext } from "../context";
 import { styles } from "../styles";
 //import { ButtonAdd } from "../components/button";
 
-export function ProjectCreate({ navigation }) {
+export function ProjectCreate({ navigation, route }) {
     const [projectName, setProjectName] = useState("");
     const { user } = useContext(ProjectContext);
 
     function handleClick() {
         projectCreate(user.uid, projectName).then(data => {
-            // Refresh ?
+            route.params.modif([...data]);
             navigation.goBack()
         }).catch(err => {
             console.log(err);

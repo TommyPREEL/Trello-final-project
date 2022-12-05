@@ -14,7 +14,7 @@ const keyExtractor = (item, index) => item.id
 export function ProjectList({ navigation }) {
     const [projectList, setProjectList] = useState([]);
     const { user } = useContext(ProjectContext)
-    const [refresh, setRefresh] = useState(true);
+    // const [refresh, setRefresh] = useState(true);
 
     //const [refreshing, setRefreshing] = useState(true);
 
@@ -24,11 +24,11 @@ export function ProjectList({ navigation }) {
         }).catch(err => console.log(err))
     }, []);
 
-    useEffect(() => {
-        projectAll(user.uid).then(data => {
-            setProjectList([...data])
-        }).catch(err => console.log(err))
-    }, [refresh]);
+    // useEffect(() => {
+    //     projectAll(user.uid).then(data => {
+    //         setProjectList([...data])
+    //     }).catch(err => console.log(err))
+    // }, [refresh]);
 
 
     const Renderer = ({ item }) => {
@@ -40,20 +40,20 @@ export function ProjectList({ navigation }) {
     }
 
     function handleClick(){
-        navigation.push('projectCreate')
+        navigation.push('projectCreate', {modif:setProjectList})
         //setRefreshing(false);
     }
 
-    function refreshButton(){
-        setRefresh(!refresh)
-    }
+    // function refreshButton(){
+    //     setRefresh(!refresh)
+    // }
 
     return (
         <View style={styles.container}>
-            <Button
+            {/* <Button
             onPress={refreshButton}
             title='Refresh'
-            />
+            /> */}
             {/* <ButtonCreate navigation={navigation} section='project' setRefreshing={setRefreshing}></ButtonCreate> */}
             <Button
                 onPress={handleClick}

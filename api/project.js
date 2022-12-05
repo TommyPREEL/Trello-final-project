@@ -63,7 +63,7 @@ export function projectEdit(uid, idProject, projectName) {
             get(child(reference, `projectList/${uid}`)).then((data) => {
                 const data1 = data.val() ?? [];
                 const num = data1.findIndex((elem) => elem.id === idProject)
-                data1[num] = {...data1[projectIndex].statusList[statusIndex], name: projectName}
+                data1[num] = {...data1[num], name: projectName}
                 set(ref(database, 'projectList/' + uid), data1);
                 resolve(data1)
             }).catch(err => {

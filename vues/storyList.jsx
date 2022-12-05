@@ -12,7 +12,7 @@ const keyExtractor = (item, index) => item.id
 export function StoryList({ navigation }) {
     const [storyList, setStoryList] = useState([]);
     const { user, currentProject, currentStatus } = useContext(ProjectContext)
-    const [refresh, setRefresh] = useState(true);
+    //const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
         storyAll(user.uid, currentProject, currentStatus).then(data => {
@@ -21,19 +21,19 @@ export function StoryList({ navigation }) {
 
     }, []);
 
-    useEffect(() => {
-        storyAll(user.uid, currentProject, currentStatus).then(data => {
-            setStoryList([...data])
-        }).catch(err => console.log(err))
-    }, [refresh]);
+    // useEffect(() => {
+    //     storyAll(user.uid, currentProject, currentStatus).then(data => {
+    //         setStoryList([...data])
+    //     }).catch(err => console.log(err))
+    // }, [refresh]);
 
     function handleClick(){
-        navigation.push('storyCreate')
+        navigation.push('storyCreate', {modif:setStoryList})
     }
 
-    function refreshButton(){
-        setRefresh(!refresh)
-    }
+    // function refreshButton(){
+    //     setRefresh(!refresh)
+    // }
 
     const Renderer = ({ item }) => {
         return (
@@ -45,10 +45,10 @@ export function StoryList({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Button
+            {/* <Button
             onPress={refreshButton}
             title='Refresh'
-            />
+            /> */}
             <Button
                 onPress={handleClick}
                 title='Create a new Story'

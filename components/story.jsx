@@ -12,7 +12,7 @@ export function Story({ item, navigation, modif }) {
 
     function handleClick() {
         setCurrentStory(item.id)
-        navigation.push("storyDetails", {story_name:item.name})
+        navigation.push("storyDetails", {item:item})
     }
 
     function handleEdit() {

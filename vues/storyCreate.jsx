@@ -2,18 +2,22 @@ import { Input, Button } from "@rneui/themed";
 import { useState, useContext } from "react";
 import { StatusBar, View } from "react-native";
 import { ProjectContext } from "../context";
-import { storyCreate } from "../api/story";
+import { storyCreate, storyAll } from "../api/story";
 import { styles } from "../styles";
 
-export function StoryCreate({ navigation }) {
+export function StoryCreate({ navigation, route }) {
     const [storyName, setStoryName] = useState("");
     const [storyContent, setStoryContent] = useState("");
     const { user, currentProject, currentStatus } = useContext(ProjectContext);
 
     function handleClick() {
         storyCreate(user.uid, currentProject, currentStatus, storyName, storyContent).then(data => {
-            // Refresh ?
-            navigation.goBack()
+            storyAll(user.uid, currentProject, currentStatus).then(storyList => {
+                route.params.modif([...storyList]);
+                navigation.goBack()
+            }).catch(err => {
+                console.log(err);
+            })
         }).catch(err => {
             console.log(err);
         })

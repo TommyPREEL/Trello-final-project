@@ -12,7 +12,7 @@ const keyExtractor = (item, index) => item.id
 export function StatusList({ navigation }) {
     const [statusList, setStatusList] = useState([]);
     const { user, currentProject } = useContext(ProjectContext)
-    const [refresh, setRefresh] = useState(true);
+    // const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
         statusAll(user.uid, currentProject).then(data => {
@@ -21,19 +21,19 @@ export function StatusList({ navigation }) {
 
     }, []);
 
-    useEffect(() => {
-        statusAll(user.uid, currentProject).then(data => {
-            setStatusList([...data])
-        }).catch(err => console.log(err))
-    }, [refresh]);
+    // useEffect(() => {
+    //     statusAll(user.uid, currentProject).then(data => {
+    //         setStatusList([...data])
+    //     }).catch(err => console.log(err))
+    // }, [refresh]);
 
     function handleClick(){
-        navigation.push('statusCreate')
+        navigation.push('statusCreate', {modif:setStatusList})
     }
 
-    function refreshButton(){
-        setRefresh(!refresh)
-    }
+    // function refreshButton(){
+    //     setRefresh(!refresh)
+    // }
 
     const Renderer = ({ item }) => {
         return (
@@ -45,10 +45,10 @@ export function StatusList({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Button
+            {/* <Button
             onPress={refreshButton}
             title='Refresh'
-            />
+            /> */}
             <Button
                 onPress={handleClick}
                 title='Create a new Status'

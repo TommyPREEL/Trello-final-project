@@ -10,8 +10,7 @@ import { styles } from "../styles";
 export function ProjectEdit({ navigation, route }) {
     const [projectName, setProjectName] = useState(route.params.p_name);
     const { user, currentProject } = useContext(ProjectContext);
-    console.log(route.params.p_name)
-    navigation.setOptions({title: route.params.p_name})
+    navigation.setOptions({title: route.params.p_name});
     
     function handleClick() {
         console.log(currentProject)
