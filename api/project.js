@@ -75,3 +75,24 @@ export function projectEdit(uid, idProject, projectName) {
         }
     })
 }
+
+export function projectById(uid, idProject) {
+    return new Promise((resolve, reject) => {
+        try {
+            const reference = ref(database);
+            get(child(reference, `projectList/${uid}`)).then((data) => {
+                const data1 = data.val() ?? [];
+                const projectIndex = data1.findIndex((elem) => elem.id === idProject)
+                data1[projectIndex] = {...data1[num], name: projectName}
+                data1.push({ id: uuidv4(), name: projectName, statusList: [] })
+                set(ref(database, 'projectList/' + uid), data1);
+                resolve(data1)
+            }).catch(err => {
+                console.log(err);
+            });
+        }
+        catch (e) {
+            reject(e)
+        }
+    })
+}
