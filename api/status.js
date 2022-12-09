@@ -98,3 +98,22 @@ export function statusEdit(uid, idProject, idStatus, statusName) {
         }
     })
 }
+
+export function statusById(uid, idProject, idStatus) {
+    return new Promise((resolve, reject) => {
+        try {
+            const reference = ref(database);
+            get(child(reference, `projectList/${uid}`)).then((data) => {
+                const data1 = data.val() ?? [];
+                const projectIndex = data1.findIndex((elem) => elem.id === idProject)
+                const statusIndex = data1[projectIndex].statusList.findIndex((elem) => elem.id === idStatus)
+                resolve(data1[projectIndex].statusList[statusIndex])
+            }).catch(err => {
+                console.log(err);
+            });
+        }
+        catch (e) {
+            reject(e)
+        }
+    })
+}

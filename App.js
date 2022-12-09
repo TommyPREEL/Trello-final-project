@@ -15,7 +15,7 @@ export default function App() {
       user, setUser, 
       currentProject, setCurrentProject, 
       currentStatus, setCurrentStatus, 
-      currentStory, setCurrentStory 
+      currentStory, setCurrentStory
     }}>
       {(user.email) ? <ProjectRouter /> : <ConnectRouter />}
     </ProjectContext.Provider>

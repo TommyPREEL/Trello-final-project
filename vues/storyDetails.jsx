@@ -5,24 +5,22 @@ import { useState } from "react";
 import { Alert, Keyboard, StatusBar, View } from "react-native";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
+import { projectById } from "../api/project";
+import { statusById } from "../api/status";
 
 export function StoryDetails({ route }) {
     const { user, currentProject, currentStatus } = useContext(ProjectContext);
     const [project, setProject] = useState({});
     const [status, setStatus] = useState({});
-
+    
     useEffect(() => {
         projectById(user.uid, currentProject).then(data => {
-            setProject([...data])
-        }).catch(err => console.log(err))
-        statusById(user.uid, currentProject, currentStatus).then(data => {
-            setStatus([...data])
+            setProject(data)
+            statusById(user.uid, currentProject, currentStatus).then(data1 => {
+                setStatus(data1)
+            }).catch(err => console.log(err))
         }).catch(err => console.log(err))
     }, []);
-
-    function test(){
-        console.log(currentProject)
-    }
 
     return (
         <View style={styles.container}>
@@ -30,10 +28,10 @@ export function StoryDetails({ route }) {
             <Text>Status name : {status.name}</Text>
             <Text>Story name : {route.params.item.name}</Text>
             <Text>Description : {route.params.item.content}</Text>
-            <Button
-            onPress={test}
-            title='Test'
-            />
+            {/* {route.params.item.image && <>
+                <Image source={{ uri: route.params.item.image }} style={{ width: 200, height: 200 }} />
+            </>} */}
+            
             <StatusBar style="auto" />
         </View>
     );
