@@ -1,5 +1,5 @@
 // import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-// import { StoryDetails } from "../vues/storyDetails";
+// import { StoryDetails } from "../views/storyDetails";
 
 // const Tab = createMaterialBottomTabNavigator();
 

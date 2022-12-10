@@ -1,15 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ProjectListRouter } from './projectListRouter';
-import { ProjectEdit } from '../vues/projectEdit';
-import { StatusEdit } from '../vues/statusEdit';
+import { ProjectEdit } from '../views/projectEdit';
+import { StatusEdit } from '../views/statusEdit';
 import { StatusListRouter } from './statusListRouter.jsx';
 import { StoryListRouter } from './storyListRouter.jsx';
-import { StoryDetails } from '../vues/storyDetails.jsx';
-import { ProjectCreate } from '../vues/projectCreate.jsx';
-import { StatusCreate } from "../vues/statusCreate";
-import { StoryCreate } from "../vues/storyCreate";
-import { StoryEdit } from '../vues/storyEdit';
+import { StoryDetails } from '../views/storyDetails.jsx';
+import { ProjectCreate } from '../views/projectCreate.jsx';
+import { StatusCreate } from "../views/statusCreate";
+import { StoryCreate } from "../views/storyCreate";
+import { StoryEdit } from '../views/storyEdit';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +20,7 @@ export function ProjectRouter() {
             <Stack.Navigator>
 
                 {/* All about Project */}
-                <Stack.Screen name="projectListRouter" options={{title:'blabla'}} component={ProjectListRouter} />
+                <Stack.Screen name="projectListRouter" options={{title:'Projects List'}} component={ProjectListRouter} />
                 <Stack.Screen name="projectCreate" options={{title:'Create a new project'}} component={ProjectCreate} />
                 <Stack.Screen name="projectEdit" component={ProjectEdit} />
 
