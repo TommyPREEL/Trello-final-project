@@ -24,7 +24,7 @@ export function ProjectEdit({ navigation, route }) {
 
     return (
 
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             <Text>Last name : {route.params.p_name}</Text>
             <Input placeholder={route.params.p_name} value={projectName} onChangeText={setProjectName} />
             <Button onPress={handleClick}>Rename project</Button>

@@ -23,7 +23,13 @@ export default function App() {
   )
 }
 
-// faire le story details
-// prendre exemple sur component jsx (pas vraiment mais tqt)
-// sur project router, au niveau de la route du details story, renvoyer des trucs
+/* TODO
+Fonctionnaliés:
+  - Prendre en compte l'image lors de la création de story
+  - Authentification Google
+
+Design:
+  - Aligner le texte dans le bouton d'action de création
+
+*/
 

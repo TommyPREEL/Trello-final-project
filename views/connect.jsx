@@ -1,7 +1,7 @@
-import { Button, Input, Text  } from "@rneui/themed";
+import { Button, Text, Input  } from "@rneui/themed";
 import { useContext } from "react";
 import { useState } from "react";
-import { Alert, Keyboard, StatusBar, View, Image, TouchableOpacity } from "react-native";
+import { Alert, Keyboard, StatusBar, View, Image, TouchableOpacity, TextInput } from "react-native";
 import { connectUser } from "../api/connect";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
@@ -24,8 +24,8 @@ export function Connect() {
         <View style={styles.appContainer}>
             <Image source={require('../assets/logo-trello.png')} style={styles.logo}/>
             <View style={styles.formConnexion}>
-                <Input placeholder="Email address" keyboardType="email-address" value={login} onChangeText={setLogin} style={styles.emailAddressConnexion} />
-                <Input placeholder="Password" secureTextEntry={true} value={mdp} onChangeText={setMdp} style={styles.passwordConnexion}/>
+                <TextInput placeholder="Email address" keyboardType="email-address" value={login} onChangeText={setLogin} underlineColorAndroid="transparent" style={styles.input} />
+                <TextInput placeholder="Password" secureTextEntry={true} value={mdp} onChangeText={setMdp} underlineColorAndroid="transparent" style={styles.input}/>
                 {/* <View style={styles.buttonConnexionView}> */}
                 <TouchableOpacity onPress={handleClick} style={styles.buttonConnexion}>
                 <Text style={styles.textButtonConnexion}>Connexion</Text>

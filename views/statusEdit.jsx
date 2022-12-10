@@ -22,7 +22,7 @@ export function StatusEdit({ navigation, route }) {
 
     return (
 
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             <Text>Last name : {route.params.status_name}</Text>
             <Input placeholder={route.params.status_name} value={statusName} onChangeText={setStatusName} />
             <Button 

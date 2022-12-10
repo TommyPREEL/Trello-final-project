@@ -10,6 +10,7 @@ import { ProjectCreate } from '../views/projectCreate.jsx';
 import { StatusCreate } from "../views/statusCreate";
 import { StoryCreate } from "../views/storyCreate";
 import { StoryEdit } from '../views/storyEdit';
+import { styles } from '../styles';
 
 const Stack = createStackNavigator();
 
@@ -25,12 +26,12 @@ export function ProjectRouter() {
                 <Stack.Screen name="projectEdit" component={ProjectEdit} />
 
                 {/* All about Status */}
-                <Stack.Screen name="statusListRouter" component={StatusListRouter} />
+                <Stack.Screen name="statusListRouter" options={{title:'Status List'}} component={StatusListRouter} />
                 <Stack.Screen name="statusCreate" options={{title:'Create a new status'}} component={StatusCreate} />
                 <Stack.Screen name="statusEdit" component={StatusEdit} />
 
                 {/* All about Story */}
-                <Stack.Screen name="storyListRouter" component={StoryListRouter} />
+                <Stack.Screen name="storyListRouter" options={{title:'Stories List'}} component={StoryListRouter} />
                 <Stack.Screen name="storyCreate" options={{title:'Create a new story'}} component={StoryCreate} />
                 <Stack.Screen name="storyEdit" component={StoryEdit} />
                 <Stack.Screen name="storyDetails" component={StoryDetails} />

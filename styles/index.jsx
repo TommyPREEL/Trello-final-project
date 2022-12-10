@@ -1,6 +1,24 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+
+    /* 
+    SHARED STYLES    
+    */
+   input:{
+    fontSize:20,
+    margin:10,
+    backgroundColor:'#EAEAEA',
+    borderRadius: 50,
+    width:250,
+    height:50,
+    borderBottomWidth: 0,
+    textAlign:'center',
+    borderBottomWidth: 0,
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+   },
     appContainer:{
         flex: 1,
         backgroundColor: '#F4F4F4',
@@ -13,11 +31,25 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    projectListRouterTab: {
-        backgroundColor: '#FFAE73',
+    /*
+    PROJECT ROUTER
+    */
+    projectListRouterTabNavigator: {
+        backgroundColor: '#ffa634',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    /*
+    STATUS ROUTER
+    */
+    statusListRouterTabNavigator:{
+        backgroundColor: '#8e38b9',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    /*
+    CONNECT COMPONENT
+    */
     logo:{
         maxWidth:400,
         maxHeight:400,
@@ -29,16 +61,27 @@ export const styles = StyleSheet.create({
         width:200,
         height:50,
         borderBottomWidth: 0,
+        textAlign:'center',
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
     },
     passwordConnexion:{
         backgroundColor:'#EAEAEA',
         borderRadius: 50,
         width:200,
-        height:50
+        height:50,
+        textAlign:'center',
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
     },
     buttonConnexion:{
         borderRadius: 50,
-        width:200,
+        margin:10,
+        width:250,
         height:50,
         backgroundColor:'#0E8AFE',
         alignItems: 'center',
@@ -60,6 +103,182 @@ export const styles = StyleSheet.create({
     },
     textButtonConnexion:{
         color:"#FFFFFF",
-        fontSize:20
+        fontSize:20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    /*
+    REGISTER COMPONENT
+    */
+    emailAddressRegister:{
+        backgroundColor:'#EAEAEA',
+        borderRadius: 50,
+        width:200,
+        height:50,
+        borderBottomWidth: 0,
+        textAlign:'center',
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
+    },
+    passwordRegister:{
+        backgroundColor:'#EAEAEA',
+        borderRadius: 50,
+        width:200,
+        height:50,
+        textAlign:'center',
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
+    },
+    confirmPasswordRegister:{
+        backgroundColor:'#EAEAEA',
+        borderRadius: 50,
+        width:200,
+        height:50,
+        textAlign:'center',
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
+    },
+    textButtonRegister:{
+        color:"#FFFFFF",
+        fontSize:20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    formRegister:{
+        height:300,
+        width:300,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 0,
+    },
+    buttonRegister:{
+        borderRadius: 50,
+        width:250,
+        height:50,
+        backgroundColor:'#0E8AFE',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin:10,
+    },
+    /*
+    PROJECTLIST COMPONENT
+    */
+    buttonCreateProject:{
+        position:"absolute",
+        right:25,
+        bottom: 25,
+        borderRadius: 50,
+    },
+    /*
+    PROJECTCREATE COMPONENT
+    */
+    buttonActionToCreateProject:{
+        borderRadius: 50,
+        width:200,
+        height:50,
+        backgroundColor:'#ffa634',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textActionToCreate:{
+        color:'white',
+        fontSize:15,
+    },
+    /*
+    STATUSCREATE COMPONENT
+    */
+    buttonCreateStatus:{
+        position:"absolute",
+        right:25,
+        bottom: 25,
+        borderRadius: 50,
+    },
+    buttonActionToCreateStatus:{
+        borderRadius: 50,
+        width:200,
+        height:50,
+        backgroundColor:'#8e38b9',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    /*
+    STORYLIST ROUTER
+    */
+    storyListRouterTabNavigator:{
+        backgroundColor: '#68ca28',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    /* 
+    STORYCREATE COMPONENT
+    */
+    buttonActionToImportImage:{
+        borderRadius: 50,
+        width:200,
+        height:50,
+        backgroundColor:'#68ca28',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin:10,
+    },
+    buttonActionToCreateStory:{
+        borderRadius: 50,
+        width:200,
+        height:50,
+        backgroundColor:'#68ca28',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin:10,
+    },
+    buttonActionToDeleteImage:{
+        borderRadius: 50,
+        width:200,
+        height:50,
+        backgroundColor:'#f15c5c',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin:10,
+    },
+    /*
+    STORYDETAILS COMPONENT
+    */
+    storyDetailsProjectName:{
+        fontSize:20,
+        backgroundColor:'#68ca28',
+        padding:20,
+        borderRadius: 20,
+    },
+    storyDetailsStatusName:{
+        fontSize:20,
+        backgroundColor:'#68ca28',
+        padding:20,
+        borderRadius: 20,
+    },
+    storyDetailsStoryName:{
+        fontSize:20,
+        backgroundColor:'#68ca28',
+        padding:20,
+        borderRadius: 20,
+    },
+    storyDetailsStoryDescription:{
+        fontSize:20,
+        backgroundColor:'#68ca28',
+        padding:20,
+        borderRadius: 20,
+    },
+    storyDetailsText:{
+        fontSize:20,
+        padding:20,
+    },
+    storyDetailsRow:{
+        flexDirection:'row',
+        margin:10,
+        borderRadius: 20,
     }
 });

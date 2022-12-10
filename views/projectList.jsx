@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useContext, useState } from "react";
-import { Alert, FlatList, View, Text, Button } from "react-native";
+import { Alert, FlatList, View, Text, Button, TouchableOpacity } from "react-native";
 import { RefreshControl } from "react-native-gesture-handler";
 import { projectAll } from "../api/project";
 import { ButtonCreate } from "../components/button";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { Project } from "../components/project";
 import { ProjectContext } from "../context";
@@ -49,17 +50,12 @@ export function ProjectList({ navigation }) {
     // }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             {/* <Button
             onPress={refreshButton}
             title='Refresh'
             /> */}
             {/* <ButtonCreate navigation={navigation} section='project' setRefreshing={setRefreshing}></ButtonCreate> */}
-            <Button
-                onPress={handleClick}
-                title='Create a new Project'
-                color="#841584"
-            />
             <FlatList
                 keyExtractor={keyExtractor}
                 data={projectList}
@@ -68,6 +64,9 @@ export function ProjectList({ navigation }) {
                 //     <RefreshControl refreshing={refreshing} onRefresh={handleClick} />
                 // }
             />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonCreateProject}>
+                <Text><MaterialCommunityIcons name="plus-circle" size={80} color="#ffa634"/></Text>
+            </TouchableOpacity>
         </View>
     )
 }

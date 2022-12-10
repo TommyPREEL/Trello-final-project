@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useContext, useState } from "react";
-import { Alert, FlatList, View, Text, Button } from "react-native";
+import { Alert, FlatList, View, Text, Button, TouchableOpacity } from "react-native";
 import { storyAll } from "../api/story";
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Story } from "../components/story";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
@@ -44,21 +44,19 @@ export function StoryList({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             {/* <Button
             onPress={refreshButton}
             title='Refresh'
             /> */}
-            <Button
-                onPress={handleClick}
-                title='Create a new Story'
-                color="#841584"
-            />
             <FlatList
                 keyExtractor={keyExtractor}
                 data={storyList}
                 renderItem={Renderer}
             />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonCreateStatus}>
+                <Text><MaterialCommunityIcons name="plus-circle" size={80} color="#68ca28"/></Text>
+            </TouchableOpacity>
         </View>
     )
 }

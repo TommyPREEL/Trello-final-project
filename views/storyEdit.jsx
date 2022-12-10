@@ -22,7 +22,7 @@ export function StoryEdit({ navigation, route }) {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             <Text>Last name : {route.params.story_name}</Text>
             <Input placeholder={route.params.story_name} value={storyName} onChangeText={setStoryName} />
             <Text>Last description : {route.params.story_content}</Text>

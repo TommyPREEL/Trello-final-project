@@ -1,9 +1,10 @@
 import { Input, Button } from "@rneui/themed";
 import { useState, useContext } from "react";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, TouchableOpacity, TextInput, Text } from "react-native";
 import { projectCreate } from "../api/project";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 //import { ButtonAdd } from "../components/button";
 
 export function ProjectCreate({ navigation, route }) {
@@ -20,14 +21,12 @@ export function ProjectCreate({ navigation, route }) {
     }
 
     return (
-
-        <View style={styles.container}>
-            <Input placeholder="Type a title for your project" value={projectName} onChangeText={setProjectName} />
+        <View style={styles.appContainer}>
+            <TextInput placeholder="Project Title" style={styles.input} value={projectName} onChangeText={setProjectName} />
             {/* <ButtonAdd navigation={navigation} section='project' projectName={projectName}></ButtonAdd> */}
-            <Button
-            onPress={handleClick}
-            title='Create a Project'
-            />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonActionToCreateProject}>
+                <Text style={styles.textActionToCreate}><MaterialCommunityIcons name="plus-circle" size={20} color="white"/> Create new Project</Text>
+            </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
     )

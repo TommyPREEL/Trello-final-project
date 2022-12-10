@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useContext, useState } from "react";
-import { Alert, FlatList, View, Text, Button } from "react-native";
+import { Alert, FlatList, View, Text, Button, TouchableOpacity } from "react-native";
 import { statusAll } from "../api/status";
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Status } from "../components/status";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
@@ -44,21 +44,19 @@ export function StatusList({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.appContainer}>
             {/* <Button
             onPress={refreshButton}
             title='Refresh'
             /> */}
-            <Button
-                onPress={handleClick}
-                title='Create a new Status'
-                color="#841584"
-            />
             <FlatList
                 keyExtractor={keyExtractor}
                 data={statusList}
                 renderItem={Renderer}
             />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonCreateStatus}>
+                <Text><MaterialCommunityIcons name="plus-circle" size={80} color="#8e38b9"/></Text>
+            </TouchableOpacity>
         </View>
     )
 }

@@ -1,10 +1,11 @@
 import { Input, Button, Image } from "@rneui/themed";
 import { useState, useContext } from "react";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, TextInput, TouchableOpacity, Text } from "react-native";
 import { ProjectContext } from "../context";
 import { storyCreate, storyAll, storyCreateWithImage } from "../api/story";
 import { styles } from "../styles";
 import * as ImagePicker from 'expo-image-picker';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export function StoryCreate({ navigation, route }) {
     const [storyName, setStoryName] = useState("");
@@ -45,21 +46,24 @@ export function StoryCreate({ navigation, route }) {
             console.log(err);
         })
     }
-
     return (
-        <View style={styles.container}>
-            <Input placeholder="Type a title for your Story" value={storyName} onChangeText={setStoryName} />
-            <Input multiline={true} numberOfLines={4} 
-            placeholder="Type a description for your Story" value={storyContent} onChangeText={setStoryContent} />
-            {!image && <Button title="Pick an image from camera roll" onPress={pickImage} />}
+        <View style={styles.appContainer}>
+            <TextInput placeholder="Story Title" value={storyName} onChangeText={setStoryName} style={styles.input} />
+            <TextInput multiline={true} numberOfLines={4} style={styles.input}
+            placeholder="Story Description" value={storyContent} onChangeText={setStoryContent} />
+            {/* <TextInput placeholder="Status Title" value={statusName} style={styles.input} onChangeText={setStatusName} /> */}
+            {!image && <TouchableOpacity onPress={pickImage} style={styles.buttonActionToImportImage}>
+                        <Text style={styles.textActionToCreate}><MaterialCommunityIcons name="upload" size={20} color="white"/> Import Image</Text>
+                        </TouchableOpacity>}
             {image && <>
                 <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
-                <Button title="Effacer" onPress={delImage} />
+                <TouchableOpacity onPress={delImage} style={styles.buttonActionToDeleteImage}>
+                <Text style={styles.textActionToCreate}><MaterialCommunityIcons name="delete" size={20} color="white"/> Delete</Text>
+            </TouchableOpacity>
             </>}
-            <Button
-            onPress={handleClick}
-            title='Create a story'
-            />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonActionToCreateStory}>
+                <Text style={styles.textActionToCreate}><MaterialCommunityIcons name="plus-circle" size={20} color="white"/> Create new Story</Text>
+            </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
     )
