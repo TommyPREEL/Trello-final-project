@@ -174,6 +174,7 @@ export const styles = StyleSheet.create({
         right:25,
         bottom: 25,
         borderRadius: 50,
+        zIndex:10,
     },
     /*
     PROJECTCREATE COMPONENT
@@ -185,6 +186,7 @@ export const styles = StyleSheet.create({
         backgroundColor:'#ffa634',
         alignItems: 'center',
         justifyContent: 'center',
+        margin:10,
     },
     textActionToCreate:{
         color:'white',
@@ -198,6 +200,7 @@ export const styles = StyleSheet.create({
         right:25,
         bottom: 25,
         borderRadius: 50,
+        zIndex:10,
     },
     buttonActionToCreateStatus:{
         borderRadius: 50,
@@ -206,6 +209,7 @@ export const styles = StyleSheet.create({
         backgroundColor:'#8e38b9',
         alignItems: 'center',
         justifyContent: 'center',
+        margin:10,
     },
     /*
     STORYLIST ROUTER
@@ -280,5 +284,84 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         margin:10,
         borderRadius: 20,
-    }
+    },
+    /*
+    STORYLIST COMPONENT
+    */
+    buttonCreateStory:{
+        position:"absolute",
+        right:25,
+        bottom: 25,
+        borderRadius: 50,
+        zIndex:10,
+    },
+    /*
+    PROJECTEDIT COMPONENT
+    */
+   projectEditRow:{
+        flexDirection:'row',
+        margin:10,
+        borderRadius: 20,
+    },
+    projectEditLastName:{
+        fontSize:20,
+        padding:10,
+    },
+    projectEditLastNameValue:{
+        backgroundColor:'#ffa634',
+        padding:20,
+        borderRadius: 20,
+        fontSize:20,
+        color:'white'
+    },
+    projectEditText:{
+        fontSize:20,
+        padding:20,
+    },
+    /*
+    STATUSEDIT COMPONENT
+    */
+    statusEditRow:{
+        flexDirection:'row',
+        margin:10,
+        borderRadius: 20,
+    },
+    statusEditLastName:{
+        fontSize:20,
+        padding:10,
+    },
+    statusEditLastNameValue:{
+        backgroundColor:'#8e38b9',
+        padding:20,
+        borderRadius: 20,
+        fontSize:20,
+        color:'white'
+    },
+    statusEditText:{
+        fontSize:20,
+        padding:20,
+    },
+    /*
+    STORYEDIT COMPONENT
+    */
+    storyEditRow:{
+        flexDirection:'row',
+        margin:10,
+        borderRadius: 20,
+    },
+    storyEditLastName:{
+        fontSize:20,
+        padding:10,
+    },
+    storyEditLastNameValue:{
+        backgroundColor:'#68ca28',
+        padding:20,
+        borderRadius: 20,
+        fontSize:20,
+        color:'white'
+    },
+    storyEditText:{
+        fontSize:20,
+        padding:20,
+    },
 });

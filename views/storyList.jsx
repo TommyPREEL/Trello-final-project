@@ -54,7 +54,7 @@ export function StoryList({ navigation }) {
                 data={storyList}
                 renderItem={Renderer}
             />
-            <TouchableOpacity onPress={handleClick} style={styles.buttonCreateStatus}>
+            <TouchableOpacity onPress={handleClick} style={styles.buttonCreateStory}>
                 <Text><MaterialCommunityIcons name="plus-circle" size={80} color="#68ca28"/></Text>
             </TouchableOpacity>
         </View>

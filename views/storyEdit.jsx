@@ -1,10 +1,11 @@
 
-import { Input, Button, Text } from "@rneui/themed";
+import { Input, Button } from "@rneui/themed";
 import { useState, useContext } from "react";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, TextInput, Text, TouchableOpacity } from "react-native";
 import { storyEdit } from "../api/story";
 import { ProjectContext } from "../context";
 import { styles } from "../styles";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export function StoryEdit({ navigation, route }) {
     const [storyName, setStoryName] = useState(route.params.story_name);
@@ -23,15 +24,13 @@ export function StoryEdit({ navigation, route }) {
 
     return (
         <View style={styles.appContainer}>
-            <Text>Last name : {route.params.story_name}</Text>
-            <Input placeholder={route.params.story_name} value={storyName} onChangeText={setStoryName} />
-            <Text>Last description : {route.params.story_content}</Text>
-            <Input multiline={true} numberOfLines={4} 
-            placeholder={route.params.story_content} value={storyContent} onChangeText={setStoryContent} />
-            <Button 
-                onPress={handleClick}
-                title='Update story'
-            />
+            <View style={styles.storyEditRow}><Text style={styles.storyEditText}>Last name : </Text><Text style={styles.storyEditLastNameValue}>{route.params.story_name}</Text></View>
+            <TextInput placeholder={route.params.story_name} style={styles.input} value={storyName} onChangeText={setStoryName} />
+            <View style={styles.storyEditRow}><Text style={styles.storyEditText}>Last description :</Text><Text style={styles.storyEditLastNameValue}>{route.params.story_content}</Text></View>
+            <TextInput placeholder={route.params.story_content} style={styles.input} value={storyContent} onChangeText={setStoryContent} multiline={true} numberOfLines={4} />
+            <TouchableOpacity onPress={handleClick} style={styles.buttonActionToCreateStory}>
+                <Text style={styles.textActionToCreate}><MaterialCommunityIcons name="pencil" size={20} color="white"/> Update Story</Text>
+            </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
     )
