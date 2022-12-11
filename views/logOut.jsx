@@ -13,6 +13,10 @@ export function LogOut({navigation}){
 
     return (
         setUser({})
+
+        //Bug on the Alert :(
+
+
     //     Alert.alert(
     //     `Log out`,
     //     `Are you sure you want to log out?`,

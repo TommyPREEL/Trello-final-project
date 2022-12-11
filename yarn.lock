@@ -2664,6 +2664,11 @@
     "prompts" "^2.4.0"
     "semver" "^6.3.0"
 
+"@react-native-google-signin/google-signin@^9.0.0":
+  "integrity" "sha512-mty1OjwoiFkzcdZdL4ew6cykIcjneIBfwL6YbiObbI67vLDKwOzOcQCIXvW7d8EZRivEOc6P44W5OSCrZ9yekg=="
+  "resolved" "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-9.0.0.tgz"
+  "version" "9.0.0"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
@@ -6361,7 +6366,7 @@
   "resolved" "https://registry.npmjs.org/expo-status-bar/-/expo-status-bar-1.4.2.tgz"
   "version" "1.4.2"
 
-"expo@*", "expo@~47.0.8":
+"expo@*", "expo@>=47.0.0", "expo@~47.0.8":
   "integrity" "sha512-PGNCIvrnYwHH4TDFsVocq/xhWZ5DW8N3bLkZJPZZgX6VgjtVLNsbZ+0lm1inLCZHP+6xSpSKRccjGHO/QQoMBQ=="
   "resolved" "https://registry.npmjs.org/expo/-/expo-47.0.8.tgz"
   "version" "47.0.8"
@@ -11067,6 +11072,13 @@
   "integrity" "sha512-ZnXwLQnGzrDpHBHiC56TXFXvmolPeMjTn1UOm610M4EXGzbEDR7oOIyS2ZiItgbs6eZc4oU/a0hpk8PrcKvv5g=="
   "resolved" "https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.3.tgz"
   "version" "1.0.3"
+
+"react-google-button@^0.7.2":
+  "integrity" "sha512-LPIqU2hIlc212kqks8MtKjRstquVkP3SIjxlK5B1nIfg2R7YqSusJAxZUkJA5dv/z6QeSuGyI9ujwV/VWMTyAA=="
+  "resolved" "https://registry.npmjs.org/react-google-button/-/react-google-button-0.7.2.tgz"
+  "version" "0.7.2"
+  dependencies:
+    "prop-types" "^15.7.2"
 
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", "react-is@^18.0.0":
   "integrity" "sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w=="

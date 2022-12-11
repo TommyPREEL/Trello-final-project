@@ -15,7 +15,6 @@ export function ProjectListRouter() {
                 tabBarIcon: () => (
                 <MaterialCommunityIcons name="clipboard-text" size={25} color="white"/>)}}
             component={ProjectList} />
-            {/* <Tab.Screen name="projectCreate" options={{title:'Create a new project'}} component={MyProjectCreate}/> */}
             <Tab.Screen name="logOut" options={{
                 title:'Log Out',
                 tabBarIcon: () => (
@@ -24,4 +23,3 @@ export function ProjectListRouter() {
         </Tab.Navigator>
     )
 }
-// clipboard-list
