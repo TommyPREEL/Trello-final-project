@@ -8,6 +8,7 @@ import { styles } from "../styles";
 // import { getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // import { auth, provider } from "../api/app";
 // import GoogleButton from "react-google-button";
+// import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
 export function Connect() {
@@ -48,6 +49,21 @@ export function Connect() {
     //     });
     // }
 
+    // Function for Google Auth, but it does not work :(
+
+    // async function onGoogleButtonPress() {
+    //     // Check if your device supports Google Play
+    //     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    //     // Get the users ID token
+    //     const { idToken } = await GoogleSignin.signIn();
+      
+    //     // Create a Google credential with the token
+    //     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      
+    //     // Sign-in the user with the credential
+    //     return auth().signInWithCredential(googleCredential);
+    //   }
+
     return (
         <View style={styles.appContainer}>
             <Image source={require('../assets/logo-trello.png')} style={styles.logo}/>
@@ -59,7 +75,7 @@ export function Connect() {
                 <Text style={styles.textButtonConnexion}>Connexion</Text>
                 </TouchableOpacity>
                 {/* </View> */}
-                {/* <FontAwesome.Button name="google" backgroundColor="#4285F4" style={{fontFamily: "Roboto"}} onPress={connectToGoogle}>
+                {/* <FontAwesome.Button name="google" backgroundColor="#4285F4" style={{fontFamily: "Roboto"}} onPress={onGoogleButtonPress}>
                     Login with Google
                 </FontAwesome.Button> */}
             </View>
